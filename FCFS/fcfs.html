@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCFS</title>
+    <link rel="stylesheet" href="fcfs.css">
+</head>
+<body>
+    <nav>
+        <h1>Disk Scheduling Algorithm </h1>
+    </nav>
+    <div class="nameDiv">
+        <h1>F . C . F . S</h1>
+    </div>
+    <div class="theoryDiv">
+        <div class="content">
+            <h1>Theory :</h1>
+            <div class="line"></div>
+            <div class="define">
+                <span>
+                    FCFS (First-Come-First-Serve) is the easiest disk scheduling algorithm among all the scheduling algorithms. In the FCFS disk scheduling algorithm, each input/output request is served in the order in which the requests arrive. In this algorithm, starvation does not occur because FCFS address each request.
+                </span>
+            </div>
+            <h1>Advantages :</h1>
+            <div class="list">
+                <ul>
+                    <li>
+                        In FCFS disk scheduling, there is no indefinite delay.
+                    </li>
+                    <li>
+                        There is no starvation in FCFS disk scheduling because each request gets a fair chance.
+                    </li>
+                </ul>
+            </div>
+            <h1>Disadvantages :</h1>
+            <div class="list">
+                <ul>
+                    <li>
+                        FCFS scheduling is not offered as the best service.
+                    </li>
+                    <li>
+                        In FCFS, scheduling disk time is not optimized.
+                    </li>
+                </ul>
+            </div>
+
+            <h1>Example :</h1>
+            <div class="example">
+                <div class="define" style="margin-top: 10px;">
+                    <span>
+                        The following chart shows the sequence in which requested tracks are serviced using C-LOOK.
+                    </span>
+                </div>
+                <img class="imageExample" src="https://media.geeksforgeeks.org/wp-content/uploads/20190727015526/fcfs-1.jpg">
+                <div class="define" style="margin-top: 10px;">
+                    <span>
+                        Therefore, the total seek count is calculated as: = (176-50)+(176-79)+(79-34)+(60-34)+(92-60)+(92-11)+(41-11)+(114-41) = 510
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="stepContent">
+        <h1>Steps to excute:</h1>
+        <div class="stepHed">
+            <p>Step 1 : </p>
+        </div>
+        <div class="stepDetail">
+            Input the queue you want to be scheduled using FCFS.
+        </div>
+        <div class="stepHed">
+            <p>Step 2 : </p>
+        </div>
+        <div class="stepDetail">
+            Input the current position of the head.
+        </div>
+        <div class="stepHed">
+            <p>Step 3 : </p>
+        </div>
+        <div class="stepDetail">
+            After execution of the queue you will get the required seek count and the seek sequence.
+        </div>
+    </div>
+</body>
+</html>

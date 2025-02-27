@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #fff;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #808080;
+}
+nav h1 {
+    font-size: 2vw;
+}
+.content .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.content .image img {
+    padding: 20px;
+    margin: 10px;
+    width: 90%;
+    height: 85vh;
+    object-fit: cover;
+}
+.content .contentLeft h1 {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 4vw;
+}
+.content .contentLeft {
+    height: 5vh;
+    width: 30vw;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    color: #fff;
+}
+.content .contentRight {
+    position: absolute;
+    top: 30%;
+    right: 8%;
+    width: 40vw;
+    height: 40vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 25px;
+    color: #fff;
+    border-radius: 10px;
+}
+.content .contentRight span {
+    font-size: 1.7vw;
+   
+}
+.algoContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heading {
+    width: 90%;
+    height: 15vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heading h1 {
+    font-size: 3vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.contentDiv {
+    width: 100%;
+    height: 50vh;
+    background-color: #edd4d4;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.contentDiv .algoBox {
+    height: 150px;
+    width: 150px;
+    background-color: rgb(239, 19, 59);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.contentDiv .algoBox:hover {
+    border: 4px solid white;
+    border-spacing: 6px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.contentDiv .algoBox span.name {
+    font-size: 1.2vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 30%;
+    margin-right: 40%;
+    margin-top: 25%;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+}
+.contentDiv .algoBox span.nameExpand {
+    margin-top: -40%;
+    color: #fff;
+}
