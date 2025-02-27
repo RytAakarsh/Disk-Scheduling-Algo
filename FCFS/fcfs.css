@@ -94,3 +94,54 @@ nav h1 {
     line-height: 1.5;
     font-family: sans-serif;
 }
+.detailBox {
+    width: 97%;
+    height: 49vh;
+    margin: 20px;
+    background-color: #808080;
+    border-radius: 15px;
+}
+.detailBox h3 {
+    margin-left: 120px;
+    margin-bottom: 15px;
+    padding-top: 40px;
+    color: #000;
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.detailBox .inputDetail {
+    margin-left: 120px;
+    font-size: 22px;
+    color: #000;
+}
+.detailBox .input {
+    width: 50%;
+    height: 35px;
+    margin-left: 120px;
+    margin-top: 20px;
+    border: 2px solid #3d3d3d;
+    border-radius: 5px;
+    font-size: 19px;
+}
+.detailBox .input2 {
+    width: 50%;
+    height: 35px;
+    margin-left: 120px;
+    margin-top: 20px;
+    border: 2px solid #3d3d3d;
+    border-radius: 5px;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+.detailBox .submit {
+    width: 7vw;
+    height: 6vh;
+    margin-left: 120px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: blue;
+    border: 2px solid rgb(75, 75, 229);
+    border-radius: 5px;
+    cursor: pointer;
+}
