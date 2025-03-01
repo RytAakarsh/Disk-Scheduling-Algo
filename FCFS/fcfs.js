@@ -27,5 +27,6 @@ submitButton.addEventListener('click', function(event) {
     console.log("Initial head position (numbers2):", numbers2);
 
     const seekValue = fcfsDiskScheduling(numbers1, numbers2);
+    document.getElementById('seekvalue').textContent = `${seekValue}`;
     console.log("Total Seek Time:", seekValue);
 });
