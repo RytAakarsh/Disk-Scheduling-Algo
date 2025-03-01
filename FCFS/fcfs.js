@@ -1,25 +1,31 @@
 console.log("running...");
 
+function fcfsDiskScheduling(requests, head) {
+    let totalSeekTime = 0;
+    let currentPosition = head;
+
+    for (let request of requests) {
+        totalSeekTime += Math.abs(request - currentPosition);
+        currentPosition = request;
+    }
+    return totalSeekTime;
+}
 
 const submitButton = document.querySelector('.submit');
 
 
-submitButton.addEventListener('click', function(e) {
-   
-    e.preventDefault();
+submitButton.addEventListener('click', function(event) {
+    event.preventDefault();
 
-   
-    const input = document.querySelector('.input1').value;
+    const input1 = document.querySelector('.input1');
+    const input2 = document.querySelector('.input2');
 
-   
-    const numberStrings = input.split(',');
+    const numbers1 = input1.value.split(',').map(Number);
+    const numbers2 = Number(input2.value);
 
-    
-    const numbers = numberStrings.map(Number);
+    console.log("Numbers from input1:", numbers1);
+    console.log("Initial head position (numbers2):", numbers2);
 
-    
-    console.log(numbers);
-
-
-    //document.getElementById('output').textContent = `Stored Numbers: ${numbers.join(', ')}`;
+    const seekValue = fcfsDiskScheduling(numbers1, numbers2);
+    console.log("Total Seek Time:", seekValue);
 });
