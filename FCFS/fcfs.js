@@ -11,6 +11,14 @@ function fcfsDiskScheduling(requests, head) {
     return totalSeekTime;
 }
 
+function scheduleprint ( numbers , head ){
+    console.log(head);
+    document.getElementById('sequencevalue').textContent = `${head}`;
+    for ( let i=0 ; i<numbers.length ; i++ ){
+        console.log(numbers[i]);
+        document.getElementById('sequencevalue').textContent += `  , ${numbers[i]}`;
+    }
+}
 const submitButton = document.querySelector('.submit');
 
 
@@ -28,5 +36,6 @@ submitButton.addEventListener('click', function(event) {
 
     const seekValue = fcfsDiskScheduling(numbers1, numbers2);
     document.getElementById('seekvalue').textContent = `${seekValue}`;
+    const ans = scheduleprint( numbers1  ,  numbers2)
     console.log("Total Seek Time:", seekValue);
 });
