@@ -143,8 +143,14 @@ nav h1 {
     color: blue;
     border: 2px solid rgb(75, 75, 229);
     border-radius: 5px;
-    cursor: pointer;
 }
+.detailBox .submit:hover {
+    cursor: pointer;
+    transform: translateY(4px);
+}
+.submit:hover i {
+    animation: spin 1s infinite linear;
+  }
 .outputBox {
     width: 97%;
     height: 25vh;
