@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCAN</title>
+    <link rel="stylesheet" href="scan.css">
+</head>
+<body>
+    <nav>
+        <h1>Disk Scheduling Algorithm </h1>
+    </nav>
+    <div class="nameDiv">
+        <h1>S . C . A . N</h1>
+    </div>
+    <div class="theoryDiv">
+        <div class="content">
+            <h1>Theory :</h1>
+            <div class="line"></div>
+            <div class="define">
+                <span>
+                    The SCAN disk scheduling algorithm is another type of disk scheduling algorithm. In this algorithm, we move the disk arm into a specific direction (direction can be moved towards large value or the smallest value). Each request is addressed that comes in its path, and when it comes into the end of the disk, then the disk arm will move reverse, and all the requests are addressed that are arriving in its path.
+                    <br>
+                    <b class="defineBold" >SCAN disk scheduling algorithm is also called an elevator algorithm because its working is like an elevator.                  
+                    </b>
+                </span>
+            </div>
+            <h1>Advantages :</h1>
+            <div class="list">
+                <ul>
+                    <li>
+                        In SCAN disk scheduling, there is a low variance of response time.
+                    </li>
+                    <li>
+                        In this algorithm, throughput is high.
+                    </li>
+                    <li>
+                        Response time is average.
+                    </li>
+                    <li>
+                        In SCAN disk scheduling, there is no starvation in static mode.
+                    </li>
+                </ul>
+            </div>
+            <h1>Disadvantages :</h1>
+            <div class="list">
+                <ul>
+                    <li>
+                        SCAN disk scheduling algorithm takes long waiting time for the cylinders, just visited by the head.
+                    </li>
+                    <li>
+                        In SCAN disk scheduling, we have to move the disk head to the end of the disk even when we don’t have any request to service.
+                    </li>
+                    <li>
+                        More complex algorithm to implement.
+                    </li>
+                    <li>
+                        Starvation may happen in dynaic mode.
+                    </li>
+                </ul>
+            </div>
+
+            <h1>Example :</h1>
+            <div class="example">
+                <div class="define" style="margin-top: 10px;">
+                    <span>
+                        Consider a disk queue with requests for I/O to blocks on cylinders (98, 183, 41, 122, 14, 124, 65, 67) The SCAN scheduling algorithm is used. <br> <b>The head is initially at cylinder number 53 moving towards larger cylinder numbers on its servicing pass. </b> The cylinders are numbered from 0 to 199. 
+                    </span>
+                </div>
+                <img class="imageExample" src="https://media.geeksforgeeks.org/wp-content/uploads/20190727175932/fcfs-2.jpg">
+                <div class="define" style="margin-top: 10px;">
+                    <span>
+                        Total head movements incurred while servicing these requests = (65 – 53) + (67 – 65) + (98 – 67) + (122 – 98) + (124 – 122) + (183 – 124) + (199 – 183) + (199 – 41) + (41 – 14) = 12 + 2 + 31 + 24 + 2 + 59 + 16 + 158 + 27 = 331
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="stepContent">
+        <h1>Steps to excute:</h1>
+        <div class="stepHed">
+            <p>Step 1 : </p>
+        </div>
+        <div class="stepDetail">
+            Input the queue you want to be scheduled using SCAN.
+        </div>
+        <div class="stepHed">
+            <p>Step 2 : </p>
+        </div>
+        <div class="stepDetail">
+            Input the current position of the head.
+        </div>
+        <div class="stepHed">
+            <p>Step 3 : </p>
+        </div>
+        <div class="stepDetail">
+            After execution of the queue you will get the required seek count and the seek sequence.
+        </div>
+    </div>
+
+    <div class="detailBox">
+        <h3>Enter the Inputs : </h3>
+        <p class="inputDetail">Enter the request sequence:</p>
+        <input type="text" placeholder="Eg: 70, 75, 80" class="input1">
+        <p class="inputDetail" style="margin-top: 30px;" >Enter the initial head position:</p>
+        <input type="text" placeholder="Eg: 73" class="input2">
+        <br>
+        <button class="submit">Run SCAN</button>
+    </div>
+    
+    <div class="outputBox">
+        <h3>Your Output :</h3>
+        <p class="outputDetail">Total seek count is : <b id="seekvalue"></b></p>
+        <p class="outputDetail">Sequence of operations' processing: <b id="sequencevalue"></b></p>
+
+        <div id="chartContainer"
+        
+        ></div>
+    </div>
+
+
+
+
+
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="scan.js"></script>
+</body>
+</html>
