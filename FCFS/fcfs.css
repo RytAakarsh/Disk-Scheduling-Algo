@@ -173,3 +173,8 @@ nav h1 {
     color: #000;
     margin-bottom: 10px;
 }
+.outputBox #chartContainer {
+    margin-left: 120px;
+    height: 320px;
+    width: 1140px;
+}
