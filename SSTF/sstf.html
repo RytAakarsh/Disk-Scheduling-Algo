@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSTF</title>
+    <link rel="stylesheet" href="sstf.css">
+</head>
+<body>
+    <nav>
+        <h1>Disk Scheduling Algorithm </h1>
+    </nav>
+    <div class="nameDiv">
+        <h1>S . S . T . F</h1>
+    </div>
+    <div class="theoryDiv">
+        <div class="content">
+            <h1>Theory :</h1>
+            <div class="line"></div>
+            <div class="define">
+                <span>
+                    Shortest seek time first (SSTF) algorithm selects the disk I/O request which requires the least disk arm movement from its current position regardless of the direction. It reduces the total seek time as compared to FCFS. The shortest seek first algorithm determines which request is closest to the current position of the head, and then services that request next. It allows the head to move to the closest track in the service queue.
+                    However, since the buffer is always getting new requests, these can skew the service time of requests that may be farthest away from the disk head's current location, if the new requests are all close to the current location; in fact, starvation may result, with the faraway requests never being able to make progress
+                </span>
+            </div>
+            <h1>Advantages :</h1>
+            <div class="list">
+                <ul>
+                    <li>
+                        In SSTF disk scheduling, the average response time is decreased.
+                    </li>
+                    <li>
+                        SSTF improves and increases throughput.
+                    </li>
+                    <li>
+                        There is less average waiting time and response time in SSTF.
+                    </li>
+                </ul>
+            </div>
+            <h1>Disadvantages :</h1>
+            <div class="list">
+                <ul>
+                    <li>
+                        In SSTF, there may be a chance of starvation.
+                    </li>
+                    <li>
+                        SSTF is not an optimal algorithm.
+                    </li>
+                    <li>
+                        There are chances of overhead in SSTF disk scheduling because, in this algorithm, we have to calculate the seek time in advanced.
+                    </li>
+                    <li>
+                        The speed of this algorithm can be decreased because direction could be switched frequently.
+                    </li>
+                </ul>
+            </div>
+
+            <h1>Example :</h1>
+            <div class="example">
+                <div class="define" style="margin-top: 10px;">
+                    <span>
+                        Suppose the order of request is: (82,170,43,140,24,16,190) <br> And current position of Read/Write head is : 50
+                    </span>
+                </div>
+                <img class="imageExample" src="https://media.geeksforgeeks.org/wp-content/uploads/20200608201702/sstf1.jpg">
+                <div class="define" style="margin-top: 10px;">
+                    <span>
+                        So, total seek time = (50-43)+(43-24)+(24-16)+(82-16)+(140-82)+(170-40)+(190-170) = 208
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="stepContent">
+        <h1>Steps to excute:</h1>
+        <div class="stepHed">
+            <p>Step 1 : </p>
+        </div>
+        <div class="stepDetail">
+            Input the queue you want to be scheduled using SSTF.
+        </div>
+        <div class="stepHed">
+            <p>Step 2 : </p>
+        </div>
+        <div class="stepDetail">
+            Input the current position of the head.
+        </div>
+        <div class="stepHed">
+            <p>Step 3 : </p>
+        </div>
+        <div class="stepDetail">
+            After execution of the queue you will get the required seek count and the seek sequence.
+        </div>
+    </div>
+
+    <div class="detailBox">
+        <h3>Enter the Inputs : </h3>
+        <p class="inputDetail">Enter the request sequence:</p>
+        <input type="text" placeholder="Eg: 70, 75, 80" class="input1">
+        <p class="inputDetail" style="margin-top: 30px;" >Enter the initial head position:</p>
+        <input type="text" placeholder="Eg: 73" class="input2">
+        <br>
+        <button class="submit">Run FCFS</button>
+    </div>
+    
+    <div class="outputBox">
+        <h3>Your Output :</h3>
+        <p class="outputDetail">Total seek count is : <b id="seekvalue"></b></p>
+        <p class="outputDetail">Sequence of operations' processing: <b id="sequencevalue"></b></p>
+
+        <div id="chartContainer"
+        
+        ></div>
+    </div>
+
+
+
+
+
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="sstf.js"></script>
+</body>
+</html>
