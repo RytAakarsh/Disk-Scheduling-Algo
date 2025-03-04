@@ -6,29 +6,24 @@ function scanDiskScheduling(requests, head, disk_size) {
     let left = [], right = [];
     let scheduledOrder = [];
 
-    // Split requests into left and right of the head
     for (let request of requests) {
         if (request < head) left.push(request);
         else right.push(request);
     }
 
-    // Sort left in descending order, right in ascending order
     left.sort((a, b) => b - a);
     right.sort((a, b) => a - b);
 
-    // Default direction: moving towards right
     for (let r of right) {
         totalSeekTime += Math.abs(currentPosition - r);
         currentPosition = r;
         scheduledOrder.push(r);
     }
-    // Move to the end of the disk
     if (currentPosition !== disk_size) {
         totalSeekTime += Math.abs(currentPosition - disk_size);
         currentPosition = disk_size;
         scheduledOrder.push(disk_size);
     }
-    // Move left
     for (let l of left) {
         totalSeekTime += Math.abs(currentPosition - l);
         currentPosition = l;
@@ -86,7 +81,7 @@ submitButton.addEventListener('click', function(event) {
 
     const input1 = document.querySelector('.input1');
     const input2 = document.querySelector('.input2');
-    const disk_size = 200; // Set disk size
+    const disk_size = 200; 
 
     const numbers1 = input1.value.split(',').map(Number);
     const numbers2 = Number(input2.value);
