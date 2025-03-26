@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-SCAN</title>
+    <link rel="stylesheet" href="cLook.css">
+</head>
+<body>
+    <nav>
+        <h1>Disk Scheduling Algorithm </h1>
+    </nav>
+    <div class="nameDiv">
+        <h1>C . L . O . O . K</h1>
+    </div>
+    <div class="theoryDiv">
+        <div class="content">
+            <h1>Theory :</h1>
+            <div class="line"></div>
+            <div class="define">
+                <span>
+                    C-LOOK is an enhanced version of both SCAN as well as LOOK disk scheduling algorithms. This algorithm also uses the idea of wrapping the tracks as a circular cylinder as C-SCAN algorithm but the seek time is better than C-SCAN algorithm. We know that C-SCAN is used to avoid starvation and services all the requests more uniformly, the same goes for C-LOOK. In this algorithm, the head services requests only in one direction(either left or right) until all the requests in this direction are not serviced and then jumps back to the farthest request on the other direction and service the remaining requests which gives a better uniform servicing as well as avoids wasting seek time for going till the end of the disk.
+
+
+                    <br>
+                   
+                </span>
+            </div>
+            <h1>Advantages :</h1>
+            <div class="list">
+                <ul>
+                    <li>
+                        In C-LOOK the head does not have to move till the end of the disk if there are no requests to be serviced.
+                    </li>
+                    <li>
+                        There is less waiting time for the cylinders which are just visited by the head in C-LOOK.
+                    </li>
+                    <li>
+                        C-LOOK provides better performance when compared to LOOK Algorithm.
+                    </li>
+                    <li>
+                        Starvation is avoided in C-LOOK.
+                    </li>
+                    <li>
+                        Low variance is provided in waiting time and response time.
+                    </li>
+                </ul>
+            </div>
+            <h1>Disadvantages :</h1>
+            <div class="list">
+                <ul>
+                    <li>
+                        In C-LOOK an overhead of finding the end requests is present.
+                    </li>
+                </ul>
+            </div>
+
+            <h1>Example :</h1>
+            <div class="example">
+                <div class="define" style="margin-top: 10px;">
+                    <span>
+                        The following chart shows the sequence in which requested tracks are serviced using C-LOOK.
+                    </span>
+                </div>
+                <img class="imageExample" src="https://media.geeksforgeeks.org/wp-content/uploads/20190830184834/fcfs-1.png">
+                <div class="define" style="margin-top: 10px;">
+                    <span>
+                        Therefore, the total seek count = (60 – 50) + (79 – 60) + (92 – 79) + (114 – 92) + (176 – 114) + (176 – 11) + (34 – 11) + (41 – 34) = 321
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="stepContent">
+        <h1>Steps to excute:</h1>
+        <div class="stepHed">
+            <p>Step 1 : </p>
+        </div>
+        <div class="stepDetail">
+            Input the queue you want to be scheduled using C-LOOK.
+        </div>
+        <div class="stepHed">
+            <p>Step 2 : </p>
+        </div>
+        <div class="stepDetail">
+            Input the current position of the head.
+        </div>
+        <div class="stepHed">
+            <p>Step 3 : </p>
+        </div>
+        <div class="stepDetail">
+            After execution of the queue you will get the required seek count and the seek sequence.
+        </div>
+    </div>
+
+    <div class="detailBox">
+        <h3>Enter the Inputs : </h3>
+        <p class="inputDetail">Enter the request sequence:</p>
+        <input type="text" placeholder="Eg: 70, 75, 80" class="input1">
+        <p class="inputDetail" style="margin-top: 30px;" >Enter the initial head position:</p>
+        <input type="text" placeholder="Eg: 73" class="input2">
+        <br>
+        <button class="submit">Run SCAN</button>
+    </div>
+    
+    <div class="outputBox">
+        <h3>Your Output :</h3>
+        <p class="outputDetail">Total seek count is : <b id="seekvalue"></b></p>
+        <p class="outputDetail">Sequence of operations' processing: <b id="sequencevalue"></b></p>
+
+        <div id="chartContainer"
+        
+        ></div>
+    </div>
+
+
+
+
+
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="cLook.js"></script>
+</body>
+</html>
