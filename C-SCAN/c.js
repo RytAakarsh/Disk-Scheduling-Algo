@@ -1,34 +1,37 @@
 console.log("running...");
 
-function scanDiskScheduling(requests, head, disk_size) {
+function cscanDiskScheduling(requests, head, disk_size) {
     let totalSeekTime = 0;
     let currentPosition = head;
     let left = [], right = [];
     let scheduledOrder = [];
 
-    // Split requests into left and right of the head
+    // Separate requests into left and right based on head
     for (let request of requests) {
         if (request < head) left.push(request);
         else right.push(request);
     }
 
-    // Sort left in descending order, right in ascending order
-    left.sort((a, b) => b - a);
+    // Sort the requests
+    left.sort((a, b) => a - b);
     right.sort((a, b) => a - b);
 
-    // Default direction: moving towards right
+    // Process requests to the right
     for (let r of right) {
         totalSeekTime += Math.abs(currentPosition - r);
         currentPosition = r;
         scheduledOrder.push(r);
     }
+
     // Move to the end of the disk
-    if (currentPosition !== disk_size) {
-        totalSeekTime += Math.abs(currentPosition - disk_size);
-        currentPosition = disk_size;
-        scheduledOrder.push(disk_size);
+    if (currentPosition !== disk_size - 1) {
+        totalSeekTime += Math.abs(currentPosition - (disk_size - 1));
+        currentPosition = 0;
+        scheduledOrder.push(disk_size - 1);
+        totalSeekTime += disk_size - 1; // Circular return to 0
     }
-    // Move left
+
+    // Process requests from the start (Circular behavior)
     for (let l of left) {
         totalSeekTime += Math.abs(currentPosition - l);
         currentPosition = l;
@@ -58,7 +61,7 @@ function renderGraph(numbers, head) {
         animationEnabled: true,
         theme: "light2",
         title: {
-            text: "Disk Scheduling SCAN"
+            text: "Disk Scheduling C-SCAN"
         },
         axisX: {
             title: "Sequence of Operations"
@@ -86,7 +89,7 @@ submitButton.addEventListener('click', function(event) {
 
     const input1 = document.querySelector('.input1');
     const input2 = document.querySelector('.input2');
-    const disk_size = 200; // Set disk size
+    const disk_size = 200; 
 
     const numbers1 = input1.value.split(',').map(Number);
     const numbers2 = Number(input2.value);
@@ -94,7 +97,7 @@ submitButton.addEventListener('click', function(event) {
     console.log("Numbers from input1:", numbers1);
     console.log("Initial head position:", numbers2);
 
-    const { totalSeekTime, scheduledOrder } = scanDiskScheduling(numbers1, numbers2, disk_size);
+    const { totalSeekTime, scheduledOrder } = cscanDiskScheduling(numbers1, numbers2, disk_size);
     document.getElementById('seekvalue').textContent = ` ${totalSeekTime}`;
 
     scheduleprint(scheduledOrder, numbers2);
@@ -102,3 +105,4 @@ submitButton.addEventListener('click', function(event) {
 
     console.log("Total Seek Time:", totalSeekTime);
 });
+

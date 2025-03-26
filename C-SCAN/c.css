@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+nav {
+    background-color: #fff;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #808080;
+}
+nav h1 {
+    font-size: 2vw;
+}
+.nameDiv {
+    width: 97%;
+    height: 19vh;
+    margin: 20px;
+    background-color: chocolate;
+    color: black;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.theoryDiv {
+    width: 97%;
+    height: 164vh;
+    margin: 20px;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+}
+.theoryDiv .content h1 {
+  margin-left: 120px;
+  padding-top: 50px;
+}
+.theoryDiv .content .line {
+    border-bottom: 2px solid #b2b1b1;
+    width: 90%;
+    margin-left: 70px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.theoryDiv .content .define {
+    margin-left: 120px;
+    margin-right: 100px;
+    color: #3d3d3d;
+    font-size: 19px;
+    word-spacing: 8px;
+    line-height: 1.6;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+}
+.theoryDiv .content .list {
+    margin-top: 20px;
+    margin-left: 120px;
+    color: #3d3d3d;
+    font-size: 19px;
+    word-spacing: 8px;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+.theoryDiv .content .imageExample {
+    margin-left: 120px;
+}
+.stepContent {
+    width: 97%;
+    height: 49vh;
+    margin: 20px;
+    background-color: #252141;
+    border-radius: 15px;
+}
+.stepContent h1 {
+    margin-left: 120px;
+    margin-bottom: 30px;
+    padding-top: 20px;
+    color: #fff;
+    font-size: 38px;
+}
+.stepContent .stepHed {
+    margin-top: 20px;
+    margin-left: 120px;
+    color: #638891;
+    font-family: Verdana, Geneva, sans-serif;
+}
+.stepContent .stepDetail {
+    margin-top: 10px;
+    margin-left: 120px;
+    color: #dddddd;
+    font-size: 19px;
+    word-spacing: 8px;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+.detailBox {
+    width: 97%;
+    height: 49vh;
+    margin: 20px;
+    background-color: #808080;
+    border-radius: 15px;
+}
+.detailBox h3 {
+    margin-left: 120px;
+    margin-bottom: 15px;
+    padding-top: 40px;
+    color: #000;
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.detailBox .inputDetail {
+    margin-left: 120px;
+    font-size: 22px;
+    color: #000;
+}
+.detailBox .input1 {
+    width: 50%;
+    height: 35px;
+    margin-left: 120px;
+    margin-top: 20px;
+    border: 2px solid #3d3d3d;
+    border-radius: 5px;
+    font-size: 19px;
+}
+.detailBox .input2 {
+    width: 50%;
+    height: 35px;
+    margin-left: 120px;
+    margin-top: 20px;
+    border: 2px solid #3d3d3d;
+    border-radius: 5px;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+.detailBox .submit {
+    width: 7vw;
+    height: 6vh;
+    margin-left: 120px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: blue;
+    border: 2px solid rgb(75, 75, 229);
+    border-radius: 5px;
+}
+.detailBox .submit:hover {
+    cursor: pointer;
+    transform: translateY(4px);
+}
+.submit:hover i {
+    animation: spin 1s infinite linear;
+  }
+.outputBox {
+    width: 97%;
+    height: 25vh;
+    margin: 20px;
+    background-color: #808080;
+    border-radius: 15px;
+}
+.outputBox h3 {
+    margin-left: 120px;
+    margin-bottom: 15px;
+    padding-top: 40px;
+    color: #000;
+    font-size: 17px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.outputBox .outputDetail {
+    margin-left: 120px;
+    font-size: 22px;
+    color: #000;
+    margin-bottom: 10px;
+}
+.outputBox #chartContainer {
+    margin-left: 120px;
+    height: 320px;
+    width: 1140px;
+}
