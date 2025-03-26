@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-SCAN</title>
+    <link rel="stylesheet" href="look.css">
+</head>
+<body>
+    <nav>
+        <h1>Disk Scheduling Algorithm </h1>
+    </nav>
+    <div class="nameDiv">
+        <h1>L . O . O . K</h1>
+    </div>
+    <div class="theoryDiv">
+        <div class="content">
+            <h1>Theory :</h1>
+            <div class="line"></div>
+            <div class="define">
+                <span>
+                The LOOK algorithm services request similarly as SCAN algorithm meanwhile it also “looks” ahead as if there are more tracks that are needed to be serviced in the same direction. If there are no pending requests in the moving direction the head reverses the direction and start servicing requests in the opposite direction. The main reason behind the better performance of LOOK algorithm in comparison to SCAN is because in this algorithm the head is not allowed to move till the end of the disk.
+
+
+                    <br>
+                   
+                </span>
+            </div>
+            <h1>Advantages :</h1>
+            <div class="list">
+                <ul>
+                    <li>
+                        If there are no requests left to be services the Head will not move to the end of the disk unlike SCAN algorithm.
+                    </li>
+                    <li>
+                        Better performance is provided compared to SCAN Algorithm.
+                    </li>
+                    <li>
+                        Starvation is avoided in LOOK scheduling algorithm.
+                    </li>
+                    <li>
+                        Low variance is provided in waiting time and response time.
+                    </li>
+                </ul>
+            </div>
+            <h1>Disadvantages :</h1>
+            <div class="list">
+                <ul>
+                    <li>
+                        Overhead of finding the end requests is present.
+                    </li>
+                    <li>
+                        ylinders which are just visited by Head have to wait for long time.
+                    </li>
+                </ul>
+            </div>
+
+            <h1>Example :</h1>
+            <div class="example">
+                <div class="define" style="margin-top: 10px;">
+                    <span>
+                        Consider a disk queue with requests for I/O to blocks on cylinders (176, 79, 34, 60, 92, 11, 41, 114) The LOOK scheduling algorithm is used. The head position is 50.
+                    </span>
+                </div>
+                <img class="imageExample" src="https://media.geeksforgeeks.org/wp-content/uploads/20190830184834/fcfs-1.png">
+                <div class="define" style="margin-top: 10px;">
+                    <span>
+                        Total head movements incurred while servicing these requests = (60-50)+(79-60)+(92-79) +(114-92)+(176-114) +(176-41)+(41-34)+(34-11) = 291
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="stepContent">
+        <h1>Steps to excute:</h1>
+        <div class="stepHed">
+            <p>Step 1 : </p>
+        </div>
+        <div class="stepDetail">
+            Input the queue you want to be scheduled using LOOK.
+        </div>
+        <div class="stepHed">
+            <p>Step 2 : </p>
+        </div>
+        <div class="stepDetail">
+            Input the current position of the head.
+        </div>
+        <div class="stepHed">
+            <p>Step 3 : </p>
+        </div>
+        <div class="stepDetail">
+            After execution of the queue you will get the required seek count and the seek sequence.
+        </div>
+    </div>
+
+    <div class="detailBox">
+        <h3>Enter the Inputs : </h3>
+        <p class="inputDetail">Enter the request sequence:</p>
+        <input type="text" placeholder="Eg: 70, 75, 80" class="input1">
+        <p class="inputDetail" style="margin-top: 30px;" >Enter the initial head position:</p>
+        <input type="text" placeholder="Eg: 73" class="input2">
+        <br>
+        <button class="submit">Run SCAN</button>
+    </div>
+    
+    <div class="outputBox">
+        <h3>Your Output :</h3>
+        <p class="outputDetail">Total seek count is : <b id="seekvalue"></b></p>
+        <p class="outputDetail">Sequence of operations' processing: <b id="sequencevalue"></b></p>
+
+        <div id="chartContainer"
+        
+        ></div>
+    </div>
+
+
+
+
+
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="look.js"></script>
+</body>
+</html>
